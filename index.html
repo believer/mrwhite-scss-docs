@@ -1,1 +1,65 @@
-<!DOCTYPE html><html lang="sv"><head><meta charset="utf-8"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Mr. White LESS Mixins</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link rel="stylesheet" href="/stylesheets/stylesheet.css" type="text/css"><link rel="stylesheet" href="/stylesheets/style.css" type="text/css"></head><body><div class="container"><div class="inner"><h1>Mr. White LESS Mixins</h1><h4>Rotate</h4></div></div></body></html>
+<!DOCTYPE html><html lang="sv"><head><meta charset="utf-8"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Mr. White LESS Mixins</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"><link href="http://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet" type="text/css"><link rel="stylesheet" href="/stylesheets/stylesheet.css" type="text/css"><link rel="stylesheet" href="/stylesheets/style.css" type="text/css"></head><body><div class="container"><div class="inner"><h1>Mr. White LESS Mixins</h1><a href="https://github.com/believer/mrwhite-less-mixins"><div class="btn">Get the code on GitHub &#8594;</div></a><h3 id="media-query-variables">Media query variables</h3>
+<p>Included in the mixins are a couple of useful variables for use with media queries.</p>
+<p>For starters there are two general, <em>@mobile</em> and <em>@tablet</em>.</p>
+<pre><code>@media @mobile {
+  // Mobile adjustments
+}
+</code></pre><p>If you need to pinpoint a specific orientation just add either <em>@portrait</em> or <em>@landscape</em> to the media query.</p>
+<pre><code>@media @tablet @portrait {
+  // Tablet portrait adjustments
+}
+</code></pre><p>There&#39;s also two device specific ones for <em>@iphone4</em> and <em>@iphone5</em> if you want to be really precise.</p>
+<div class="row"><h3 id="appearance">Appearance</h3>
+<h4 id="default-values-and-arguments">Default values and arguments</h4>
+<ul>
+<li>@prop: none</li>
+</ul>
+<hr>
+<p>Set the appearance of the element. Takes one arguments for the property.
+Does not affect select dropdowns in Firefox.</p>
+<pre><code>.appearance();
+</code></pre><select></select><div class="center">&#8595;</div><select class="mixins appearance"></select></div><div class="row"><h3 id="border-radius">Border radius</h3>
+<h4 id="default-values-and-arguments">Default values and arguments</h4>
+<ul>
+<li>@radius: 3px</li>
+</ul>
+<hr>
+<p>Adjust the border radius of an element. Can also be used to make circle shapes.</p>
+<pre><code>.border-radius {
+  .border-radius(100px);
+  .size(100px);
+}
+</code></pre><div class="mixins border-radius"></div></div><div class="row"><h3 id="box-shadow">Box shadow</h3>
+<p>Set the outer box shadow of an element.</p>
+<pre><code>.box-shadow {
+  .box-shadow(0 0 20px rgba(33,33,33,0.6));
+}
+</code></pre><div class="mixins box-shadow"></div></div><div class="row"><h3 id="box-sizing">Box sizing</h3>
+<h4 id="default-values-and-arguments">Default values and arguments</h4>
+<ul>
+<li>@type: border-box</li>
+</ul>
+<hr>
+<p>Change the box model of an element. Defaults to border-box, which if used with padding doesn&#39;t expand the box in size.</p>
+<pre><code>.box-sizing {
+  .box-sizing();
+}
+</code></pre></div><div class="row"><h3 id="center">Center</h3>
+<h4 id="default-values-and-arguments">Default values and arguments</h4>
+<ul>
+<li>@coord: <em>no default</em></li>
+<li>@direction: top (for x) / left (for y)</li>
+<li>@y, @x: 0</li>
+</ul>
+<hr>
+<p>Centers an elements within it&#39;s relative parent. Example two shows how the <em>@direction</em> and <em>@x</em> values can be manipulated.</p>
+<pre><code>// Center X
+.center(x);
+
+// Start from the right instead of default left and move
+// element 40px from the right
+.center(y, right, 40px); 
+
+// Center in middle
+.center(both);
+</code></pre><div class="box"><div class="mixins center-x">Centered on x-axis</div></div><div class="box"><div class="mixins center-y">Centered on y-axis but 40 pixels from the right</div></div><div class="box"><div class="mixins center-both">Centered on both axes</div></div></div></div></div></body></html>
